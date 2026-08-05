@@ -219,6 +219,7 @@ img {
     padding: 0.8rem 1.8rem;
     border-radius: var(--radius);
     border: 1px solid transparent;
+    background: transparent;
     cursor: pointer;
     transition: transform 0.12s ease, background 0.15s ease, color 0.15s ease;
 }
