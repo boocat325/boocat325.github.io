@@ -192,4 +192,39 @@
             countIO.observe(el);
         });
     }
+
+    // 当前页导航高亮
+    (function () {
+        var path = window.location.pathname.split("/").pop() || "index.html";
+        var map = { "index.html": "index", "about.html": "about", "services.html": "services", "fleet.html": "fleet", "contact.html": "contact" };
+        var key = map[path];
+        if (!key) return;
+        document.querySelectorAll('.nav a[data-nav]').forEach(function (a) {
+            a.classList.toggle("is-active", a.getAttribute("data-nav") === key);
+        });
+    })();
+
+    // FAQ 手风琴
+    document.querySelectorAll(".faq-item").forEach(function (item) {
+        var q = item.querySelector(".faq-q");
+        var a = item.querySelector(".faq-a");
+        if (!q || !a) return;
+        q.addEventListener("click", function () {
+            var wasOpen = item.classList.contains("is-open");
+            document.querySelectorAll(".faq-item.is-open").forEach(function (other) {
+                if (other !== item) {
+                    other.classList.remove("is-open");
+                    var oa = other.querySelector(".faq-a");
+                    if (oa) oa.style.maxHeight = "0";
+                }
+            });
+            if (wasOpen) {
+                item.classList.remove("is-open");
+                a.style.maxHeight = "0";
+            } else {
+                item.classList.add("is-open");
+                a.style.maxHeight = a.scrollHeight + "px";
+            }
+        });
+    });
 })();

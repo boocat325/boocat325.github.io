@@ -17,16 +17,16 @@
 <body>
 
     <header class="topbar" id="topbar">
-        <a class="brand" href="#top">
+        <a class="brand" href="index.html">
             <span class="brand-mark">金益泰</span>
             <span class="brand-sub">宁波 · 国际货运代理</span>
         </a>
         <nav class="nav" id="nav" aria-label="主导航">
-            <a href="#about">关于我们</a>
-            <a href="#services">服务</a>
-            <a href="#advantages">服务优势</a>
-            <a href="#profile">公司档案</a>
-            <a href="#contact">联系</a>
+            <a href="index.html" data-nav="index">首页</a>
+            <a href="about.html" data-nav="about">关于我们</a>
+            <a href="services.html" data-nav="services">服务</a>
+            <a href="fleet.html" data-nav="fleet">车队</a>
+            <a href="contact.html" data-nav="contact">联系</a>
             <button type="button" class="nav-cta" data-quote>获取报价</button>
         </nav>
         <button class="nav-toggle" id="nav-toggle" aria-controls="nav" aria-expanded="false" aria-label="打开菜单">
@@ -50,7 +50,7 @@
                 </p>
                 <div class="hero-actions">
                     <button type="button" class="btn btn-signal" data-quote>获取报价</button>
-                    <a class="btn btn-ghost" href="#profile">查看公司档案</a>
+                    <a class="btn btn-ghost" href="about.html">了解公司</a>
                 </div>
                 <dl class="hero-stats">
                     <div class="stat">
@@ -91,7 +91,51 @@
             </div>
         </section>
 
-        <!-- 关于我们 -->
+        <!-- 服务概览 -->
+        <section class="services" id="services">
+            <header class="section-head" data-reveal>
+                <p class="eyebrow">SERVICES / 服务项目</p>
+                <h2 class="section-title">一家承运，全程在握</h2>
+                <p class="section-sub">围绕集装箱拖车运输的延伸服务，从进港到放行。</p>
+            </header>
+
+            <div class="preview-grid" data-reveal>
+                <article class="card">
+                    <span class="card-code">TRK · 主营</span>
+                    <h3>集装箱拖车运输</h3>
+                    <p>自有车队 30 辆、自 2010 年运营至今，集疏港拖柜、短驳及陆路运输。</p>
+                </article>
+                <article class="card">
+                    <span class="card-code">CLR</span>
+                    <h3>报关报检</h3>
+                    <p>报关业务与报检业务，专业报检员团队，一站式清关。</p>
+                </article>
+                <article class="card">
+                    <span class="card-code">FUM</span>
+                    <h3>货物熏蒸</h3>
+                    <p>旧机器熏蒸、正规货物熏蒸，按标准规范作业。</p>
+                </article>
+                <article class="card">
+                    <span class="card-code">RFR</span>
+                    <h3>冷柜装箱</h3>
+                    <p>冷藏货物装柜、温控操作规范。</p>
+                </article>
+                <article class="card">
+                    <span class="card-code">VAN</span>
+                    <h3>北仑仓库内装</h3>
+                    <p>北仑仓库装箱、内装服务，货到即装、即装即出。</p>
+                </article>
+                <article class="card">
+                    <span class="card-code">IMP</span>
+                    <h3>进出口代理</h3>
+                    <p>货物与技术进出口、进出口代理，全流程代办。</p>
+                </article>
+            </div>
+
+            <p class="services-note"><a class="preview-more" href="services.html">查看全部服务 →</a></p>
+        </section>
+
+        <!-- 关于预览 -->
         <section class="about" id="about">
             <header class="section-head" data-reveal>
                 <p class="eyebrow">ABOUT / 关于我们</p>
@@ -110,137 +154,7 @@
                 </p>
             </div>
 
-            <dl class="about-values" data-reveal>
-                <div class="value-card">
-                    <dt>使命</dt>
-                    <dd>让每一票货，准时、安全抵达。</dd>
-                </div>
-                <div class="value-card">
-                    <dt>愿景</dt>
-                    <dd>成为客户信赖的一站式国际物流伙伴。</dd>
-                </div>
-                <div class="value-card">
-                    <dt>价值观</dt>
-                    <dd>诚信为本 · 效率为先 · 客户至上。</dd>
-                </div>
-            </dl>
-
-            <ul class="about-advantages" data-reveal>
-                <li>
-                    <h3>港区区位</h3>
-                    <p>地处宁波舟山港腹地，提柜、进港、衔接更顺畅。</p>
-                </li>
-                <li>
-                    <h3>通关一站式</h3>
-                    <p>报关报检、仓储装卸、进出口代理，全流程代办。</p>
-                </li>
-                <li>
-                    <h3>伙伴式服务</h3>
-                    <p>全程跟踪、及时响应，做长期可靠的物流伙伴。</p>
-                </li>
-            </ul>
-        </section>
-
-        <!-- 服务：对应经营范围 -->
-        <section class="services" id="services">
-            <header class="section-head" data-reveal>
-                <p class="eyebrow">SERVICES / 服务项目</p>
-                <h2 class="section-title">一家承运，全程在握</h2>
-                <p class="section-sub">围绕集装箱拖车运输的延伸服务，从进港到放行。</p>
-            </header>
-
-            <div class="service-grid" data-reveal>
-                <article class="card card-featured">
-                    <div class="featured-main">
-                        <span class="card-code">TRK · 主营</span>
-                        <h3>集装箱拖车运输</h3>
-                        <p>自有车队 30 辆、自 2010 年运营至今，承接宁波舟山港集疏港拖柜、短驳及陆路运输，重箱、空箱全程管理。</p>
-                    </div>
-                    <div class="featured-stats">
-                        <div>
-                            <strong>30</strong>
-                            <span>辆自营车队</span>
-                        </div>
-                        <div>
-                            <strong>2010</strong>
-                            <span>年运营至今</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="card">
-                    <span class="card-code">TRK</span>
-                    <h3>陆路运输代理</h3>
-                    <p>陆路国际货物运输代理，拖柜、短驳、内贸陆运。</p>
-                </article>
-                <article class="card">
-                    <span class="card-code">CLR</span>
-                    <h3>报关报检</h3>
-                    <p>报关业务与报检业务，专业报检员团队，口岸放行的一站式清关。</p>
-                </article>
-                <article class="card">
-                    <span class="card-code">FUM</span>
-                    <h3>货物熏蒸</h3>
-                    <p>旧机器熏蒸、正规货物熏蒸，按标准规范作业。</p>
-                </article>
-                <article class="card">
-                    <span class="card-code">BOX</span>
-                    <h3>集装箱运输</h3>
-                    <p>国际集装箱运输运力对接，重箱、空箱全程管理。</p>
-                </article>
-                <article class="card">
-                    <span class="card-code">RFR</span>
-                    <h3>冷柜装箱</h3>
-                    <p>冷柜装箱服务，冷藏货物装柜、温控操作规范。</p>
-                </article>
-                <article class="card">
-                    <span class="card-code">WH</span>
-                    <h3>仓储与装卸</h3>
-                    <p>普通货物仓储服务与装卸搬运，进出港中转无忧。</p>
-                </article>
-                <article class="card">
-                    <span class="card-code">VAN</span>
-                    <h3>北仑仓库内装</h3>
-                    <p>北仑仓库装箱、内装服务，货到即装、即装即出。</p>
-                </article>
-                <article class="card">
-                    <span class="card-code">IMP</span>
-                    <h3>进出口代理</h3>
-                    <p>货物与技术进出口、进出口代理，全流程代办。</p>
-                </article>
-            </div>
-
-            <div class="clearance" data-reveal>
-                <header class="clearance-head">
-                    <span class="card-code">CLR · 报关网络</span>
-                    <h3>报关报检，合作网络有底气</h3>
-                    <p>与一级报关行深度合作，出口报关、进口报关均可办理；联合宁波、保税区、义乌报关行，为客人提供多样化的报关选择。</p>
-                </header>
-
-                <ul class="clearance-list">
-                    <li>
-                        <strong>一级报关行</strong>
-                        <span>出口报关 · 进口报关</span>
-                    </li>
-                    <li>
-                        <strong>宁波报关行</strong>
-                        <span>买单报关 · 一般进口报关</span>
-                    </li>
-                    <li>
-                        <strong>保税区报关行</strong>
-                        <span>保税区报关</span>
-                    </li>
-                    <li>
-                        <strong>义乌报关行</strong>
-                        <span>紧密合作 · 多样化宁波出口报关</span>
-                    </li>
-                </ul>
-
-                <p class="clearance-promise">
-                    无论宁波报关还是义乌报关，遇到问题我们都能迅速赶到现场、对接现场报关老师，给客人最便捷的服务。
-                </p>
-            </div>
-
-            <p class="services-note">许可项目：船舶拆除（经相关部门批准后开展）。</p>
+            <p class="services-note"><a class="preview-more" href="about.html">了解更多关于我们 →</a></p>
         </section>
 
         <!-- 服务优势 -->
@@ -287,102 +201,46 @@
             </div>
         </section>
 
-        <!-- 公司档案：货运单样式 -->
-        <section class="profile" id="profile">
-            <div class="profile-copy">
-                <header class="section-head" data-reveal>
-                    <p class="eyebrow">COMPANY / 公司档案</p>
-                    <h2 class="section-title">一纸单据，如实交付</h2>
-                    <p class="section-sub">每一票货都随一份单据。这一份，是我们的。</p>
-                </header>
-
-                <dl class="manifest">
-                    <div class="manifest-row">
-                        <dt>企业名称</dt>
-                        <dd>宁波金益泰国际物流有限公司</dd>
-                    </div>
-                    <div class="manifest-row">
-                        <dt>企业类型</dt>
-                        <dd>有限责任公司（自然人投资或控股）</dd>
-                    </div>
-                    <div class="manifest-row">
-                        <dt>成立日期</dt>
-                        <dd>2012年</dd>
-                    </div>
-                    <div class="manifest-row">
-                        <dt>注册资本</dt>
-                        <dd>伍佰万元整</dd>
-                    </div>
-                    <div class="manifest-row">
-                        <dt>注册地址</dt>
-                        <dd>浙江省宁波市海曙区集士港镇春华路925号519</dd>
-                    </div>
-                    <div class="manifest-row">
-                        <dt>联系电话</dt>
-                        <dd>18668557635</dd>
-                    </div>
-                </dl>
-            </div>
-
-            <aside class="scope-card" data-reveal>
-                <span class="card-code">SCOPE · 经营范围</span>
-                <p>一般项目：陆路国际货物运输代理；海上国际货物运输代理；航空国际货物运输代理；普通货物仓储服务（不含危险化学品等需许可审批的项目）；装卸搬运；国际货物运输代理；报关业务；报检业务；从事国际集装箱船、普通货船运输；集装箱制造；集装箱销售；信息咨询服务（不含许可类信息咨询服务）；信息技术咨询服务；货物进出口；技术进出口；进出口代理。</p>
-                <p class="scope-license">许可项目：船舶拆除。</p>
-            </aside>
-        </section>
-
-        <!-- 联系 -->
-        <section class="contact" id="contact">
-            <div class="contact-inner">
-                <header class="section-head" data-reveal>
-                    <p class="eyebrow">CONTACT / 联系</p>
-                    <h2 class="section-title">把你的货交给金益泰</h2>
-                    <p class="section-sub">留下需求，我们回电报价。海、陆、空，从宁波出发。</p>
-                </header>
-
+        <!-- 联系 CTA -->
+        <section class="cta-band">
+            <div class="cta-band-inner">
+                <h2>把你的货交给金益泰</h2>
+                <p>电话 / 微信 / QQ / 邮箱，留下需求，我们回电报价。</p>
                 <div class="hero-actions">
                     <a class="btn btn-signal" href="tel:18668557635">拨打电话 18668557635</a>
-                    <a class="btn btn-ghost" href="#top">返回顶部</a>
+                    <a class="btn btn-ghost" href="contact.html">查看联系方式</a>
                 </div>
-
-                <dl class="contact-list">
-                    <div class="contact-row">
-                        <dt>注册地址</dt>
-                        <dd>浙江省宁波市海曙区集士港镇春华路925号519</dd>
-                    </div>
-                    <div class="contact-row">
-                        <dt>邮箱</dt>
-                        <dd>
-                            <a href="mailto:114628789@qq.com" class="mailto" data-email>
-                                114628789@qq.com<span class="modal-copy-tip" data-email-tip>点击复制</span>
-                            </a>
-                        </dd>
-                    </div>
-                    <div class="contact-row">
-                        <dt>微信</dt>
-                        <dd>
-                            <button type="button" class="wechat-row" data-wechat>
-                                <span>紫晨 15657866860</span>
-                                <span class="modal-copy-tip" data-copy-tip>点击复制</span>
-                            </button>
-                        </dd>
-                    </div>
-                    <div class="contact-row">
-                        <dt>QQ</dt>
-                        <dd>
-                            <a href="#" class="mailto" data-qq>
-                                1057902189<span class="modal-copy-tip" data-qq-tip>点击复制</span>
-                            </a>
-                        </dd>
-                    </div>
-                </dl>
             </div>
         </section>
 
     </main>
 
     <footer class="footer">
-        <p>© <span id="year">2026</span> 宁波金益泰国际物流有限公司</p>
+        <div class="footer-cols">
+            <div>
+                <h3>公司信息</h3>
+                <p class="footer-brand">宁波金益泰国际物流有限公司</p>
+                <p>集装箱拖车运输 · 重资产自营</p>
+                <p>自营 30 辆 · 自 2010 年运营至今</p>
+                <p>浙江省宁波市海曙区集士港镇春华路925号519</p>
+            </div>
+            <div>
+                <h3>快速链接</h3>
+                <a href="index.html">首页</a>
+                <a href="about.html">关于我们</a>
+                <a href="services.html">服务项目</a>
+                <a href="fleet.html">车队与设备</a>
+                <a href="contact.html">联系我们</a>
+            </div>
+            <div>
+                <h3>联系方式</h3>
+                <p>电话：18668557635</p>
+                <p>邮箱：114628789@qq.com</p>
+                <p>微信：15657866860（紫晨）</p>
+                <p>QQ：1057902189</p>
+            </div>
+        </div>
+        <p class="footer-copy">© <span id="year">2026</span> 宁波金益泰国际物流有限公司</p>
         <p class="footer-note">本站信息仅作展示，具体经营信息以登记机关公示为准。</p>
     </footer>
 

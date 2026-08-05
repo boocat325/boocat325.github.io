@@ -851,24 +851,71 @@ section {
 .footer {
     background: var(--deep-2);
     color: var(--mist);
-    padding: 2rem var(--pad);
-    text-align: center;
+    padding: clamp(2.5rem, 6vw, 4rem) var(--pad) 1.5rem;
     font-size: 0.85rem;
     border-top: 1px solid rgba(220, 229, 227, 0.1);
 }
 
-.footer p + p {
+.footer-cols {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.1fr;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    max-width: var(--max);
+    margin: 0 auto 2.5rem;
+}
+
+.footer-cols h3 {
+    font-family: var(--font-lat);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.9rem;
+}
+
+.footer-cols p,
+.footer-cols a {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--mist);
+    line-height: 1.9;
+}
+
+.footer-cols a:hover {
+    color: var(--amber);
+}
+
+.footer-brand {
+    font-weight: 700;
+    color: var(--paper) !important;
+    margin-bottom: 0.4rem;
+}
+
+.footer-copy {
+    max-width: var(--max);
+    margin: 0 auto;
+    text-align: center;
+    color: var(--mist);
+    opacity: 0.8;
+}
+
+.footer-copy + .footer-note {
     margin-top: 0.4rem;
 }
 
-.footer .mono {
-    color: var(--amber);
-    opacity: 0.9;
-}
-
 .footer-note {
+    max-width: var(--max);
+    margin: 0 auto;
     font-size: 0.72rem;
     opacity: 0.6;
+    text-align: center;
+}
+
+@media (max-width: 620px) {
+    .footer-cols {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ---------- 响应式 ---------- */
@@ -1176,5 +1223,436 @@ body.no-scroll {
 
     .stencil-track {
         animation: none !important;
+    }
+}
+
+/* ============================================================
+   多页新增组件
+   ============================================================ */
+
+/* 导航当前页高亮 */
+.nav a.is-active {
+    color: var(--amber);
+}
+
+/* 内页顶部标题条 */
+.page-hero {
+    position: relative;
+    background:
+        radial-gradient(900px 460px at 88% -12%, rgba(232, 101, 43, 0.12), transparent 60%),
+        var(--ink);
+    color: var(--paper);
+    padding: clamp(4rem, 10vw, 6rem) var(--pad);
+    max-width: none;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(220, 229, 227, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(220, 229, 227, 0.06) 1px, transparent 1px);
+    background-size: 64px 64px;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(180deg, #000 30%, transparent 95%);
+    mask-image: linear-gradient(180deg, #000 30%, transparent 95%);
+}
+
+.page-hero-inner {
+    position: relative;
+    max-width: var(--max);
+    margin: 0 auto;
+}
+
+.page-hero .eyebrow {
+    color: var(--amber);
+}
+
+.page-hero h1 {
+    font-weight: 900;
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+
+.page-hero-sub {
+    color: var(--mist);
+    max-width: 34em;
+}
+
+/* 服务流程时间轴 */
+.process {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    counter-reset: step;
+}
+
+.process-step {
+    background: #fff;
+    padding: 1.4rem 1.1rem;
+}
+
+.process-step::before {
+    counter-increment: step;
+    content: "0" counter(step);
+    font-family: var(--font-lat);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--amber);
+    display: block;
+    margin-bottom: 0.6rem;
+}
+
+.process-step h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.process-step p {
+    font-size: 0.82rem;
+    color: var(--steel);
+    line-height: 1.55;
+}
+
+/* 覆盖网络 */
+.network-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.network-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--ink);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.2rem;
+}
+
+.network-card .card-code {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.network-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.network-card p {
+    font-size: 0.85rem;
+    color: var(--steel);
+    line-height: 1.6;
+}
+
+/* FAQ 手风琴 */
+.faq {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 46em;
+}
+
+.faq-item {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.faq-item.is-open {
+    border-color: var(--signal);
+}
+
+.faq-q {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    background: none;
+    border: none;
+    font: inherit;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    color: var(--ink);
+}
+
+.faq-q::after {
+    content: "+";
+    font-family: var(--font-lat);
+    font-size: 1.3rem;
+    color: var(--signal);
+    transition: transform 0.2s ease;
+}
+
+.faq-item.is-open .faq-q::after {
+    transform: rotate(45deg);
+}
+
+.faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+}
+
+.faq-a p {
+    padding: 0 1.2rem 1.1rem;
+    font-size: 0.9rem;
+    color: var(--steel);
+}
+
+/* 车队页 */
+.fleet-lead {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: center;
+}
+
+.fleet-lead p {
+    color: var(--steel);
+}
+
+.fleet-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.fleet-stats div {
+    background: #fff;
+    padding: 1.3rem 1.1rem;
+    text-align: center;
+}
+
+.fleet-stats strong {
+    font-family: var(--font-lat);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    color: var(--signal);
+    display: block;
+    line-height: 1.1;
+}
+
+.fleet-stats span {
+    font-size: 0.82rem;
+    color: var(--steel);
+}
+
+.fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.fleet-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--signal);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.3rem;
+}
+
+.fleet-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.45rem;
+}
+
+.fleet-card p {
+    font-size: 0.85rem;
+    color: var(--steel);
+    line-height: 1.6;
+}
+
+/* 地址/地图 */
+.address-block {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: start;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+}
+
+.address-block .manifest {
+    border-top: 3px solid var(--ink);
+}
+
+.map-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+.map-actions .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.3rem;
+}
+
+/* 首页预览区 */
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.preview-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.3rem;
+}
+
+.preview-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.preview-card p {
+    font-size: 0.88rem;
+    color: var(--steel);
+}
+
+.preview-more {
+    display: inline-block;
+    margin-top: 0.9rem;
+    font-family: var(--font-lat);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--signal);
+}
+
+.preview-more:hover {
+    color: var(--amber);
+}
+
+/* CTA 横幅 */
+.cta-band {
+    background: var(--ink);
+    color: var(--paper);
+    max-width: none;
+    border-top: 4px solid var(--signal);
+}
+
+.cta-band-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-band h2 {
+    font-weight: 900;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    margin-bottom: 0.75rem;
+}
+
+.cta-band p {
+    color: var(--mist);
+    margin-bottom: 1.75rem;
+}
+
+/* 发展历程时间轴 */
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.timeline-step {
+    background: #fff;
+    padding: 1.4rem 1.2rem;
+}
+
+.timeline-year {
+    font-family: var(--font-lat);
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--signal);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-step h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.timeline-step p {
+    font-size: 0.85rem;
+    color: var(--steel);
+    line-height: 1.6;
+}
+
+/* 多页新增组件响应式 */
+@media (max-width: 860px) {
+    .process {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .network-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fleet-lead {
+        grid-template-columns: 1fr;
+    }
+
+    .fleet-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .address-block {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 620px) {
+    .process {
+        grid-template-columns: 1fr;
+    }
+
+    .network-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fleet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        grid-template-columns: 1fr;
     }
 }
