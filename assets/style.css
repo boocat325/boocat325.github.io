@@ -1481,6 +1481,32 @@ body.no-scroll {
     line-height: 1.6;
 }
 
+/* 照片墙 */
+.gallery-grid {
+    column-count: 3;
+    column-gap: 1rem;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: #fff;
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+}
+
+.gallery-item figcaption {
+    padding: 0.6rem 0.9rem 0.8rem;
+    font-size: 0.82rem;
+    color: var(--steel);
+}
+
 /* 地址/地图 */
 .address-block {
     display: grid;
@@ -1631,6 +1657,10 @@ body.no-scroll {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .gallery-grid {
+        column-count: 2;
+    }
+
     .address-block {
         grid-template-columns: 1fr;
     }
@@ -1651,6 +1681,10 @@ body.no-scroll {
 
     .fleet-grid {
         grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        column-count: 1;
     }
 
     .preview-grid {
