@@ -1355,6 +1355,38 @@ body.no-scroll {
     line-height: 1.6;
 }
 
+/* 资质荣誉 */
+.credentials {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 46em;
+}
+
+.credential-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--signal);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.3rem;
+}
+
+.credential-card .card-code {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.credential-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.credential-card p {
+    font-size: 0.85rem;
+    color: var(--steel);
+}
+
 /* FAQ 手风琴 */
 .faq {
     display: grid;
@@ -1680,6 +1712,10 @@ body.no-scroll {
     }
 
     .network-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .credentials {
         grid-template-columns: 1fr;
     }
 
