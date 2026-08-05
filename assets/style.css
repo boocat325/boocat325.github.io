@@ -1613,6 +1613,10 @@ body.no-scroll {
     overflow: hidden;
 }
 
+.timeline--two {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .timeline-step {
     background: #fff;
     padding: 1.4rem 1.2rem;
