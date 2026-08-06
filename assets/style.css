@@ -938,10 +938,6 @@ section {
 }
 
 @media (max-width: 620px) {
-    .brand-sub {
-        display: none;
-    }
-
     /* 汉堡按钮 */
     .nav-toggle {
         display: inline-flex;
