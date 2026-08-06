@@ -1281,6 +1281,75 @@ body.no-scroll {
         url("img/bg-warehouse-1.webp");
 }
 
+.page-hero--links {
+    background-image:
+        linear-gradient(rgba(11, 26, 29, 0.92), rgba(11, 26, 29, 0.85)),
+        url("img/bg-warehouse-3.webp");
+}
+
+/* 港口链接页 */
+.port-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.port-card {
+    display: block;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--ink);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.3rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.port-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(11, 26, 29, 0.08);
+    border-top-color: var(--signal);
+}
+
+.port-card .card-code {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.port-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.port-card p {
+    font-size: 0.85rem;
+    color: var(--steel);
+    line-height: 1.6;
+}
+
+.port-go {
+    display: inline-block;
+    margin-top: 0.8rem;
+    font-family: var(--font-lat);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--signal);
+    transition: color 0.15s ease;
+}
+
+.port-card:hover .port-go {
+    color: var(--amber);
+}
+
+.port-note {
+    margin-top: 1.4rem;
+    font-size: 0.9rem;
+    color: var(--steel);
+    padding-left: 0.8rem;
+    border-left: 3px solid var(--amber);
+}
+
 .page-hero::before {
     content: "";
     position: absolute;
@@ -1737,6 +1806,10 @@ body.no-scroll {
     .preview-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .port-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 620px) {
@@ -1764,6 +1837,10 @@ body.no-scroll {
         grid-template-columns: 1fr;
     }
 
+    .port-grid {
+        grid-template-columns: 1fr;
+    }
+
     .timeline {
         grid-template-columns: 1fr;
     }
@@ -1783,7 +1860,7 @@ body.no-scroll {
         right: 0;
         z-index: 45;
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         background: rgba(11, 26, 29, 0.96);
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);

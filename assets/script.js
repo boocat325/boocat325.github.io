@@ -196,7 +196,7 @@
     // 当前页导航高亮
     (function () {
         var path = window.location.pathname.split("/").pop() || "index.html";
-        var map = { "index.html": "index", "about.html": "about", "services.html": "services", "fleet.html": "fleet", "contact.html": "contact" };
+        var map = { "index.html": "index", "about.html": "about", "services.html": "services", "fleet.html": "fleet", "contact.html": "contact", "links.html": "links" };
         var key = map[path];
         if (!key) return;
         document.querySelectorAll('a[data-nav]').forEach(function (a) {
