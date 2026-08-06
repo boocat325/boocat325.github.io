@@ -195,10 +195,10 @@
 
     // 当前页导航高亮
     (function () {
-        var path = window.location.pathname.split("/").pop() || "index.html";
-        var map = { "index.html": "index", "about.html": "about", "services.html": "services", "fleet.html": "fleet", "contact.html": "contact", "links.html": "links" };
-        var key = map[path];
-        if (!key) return;
+        // 目录式 URL：/about/ -> about；/ -> index；兼容旧的 .html
+        var segments = window.location.pathname.split("/").filter(Boolean);
+        var key = (segments[0] || "index").replace(/\.html$/, "");
+        if (["index", "about", "services", "fleet", "contact", "links"].indexOf(key) < 0) return;
         document.querySelectorAll('a[data-nav]').forEach(function (a) {
             a.classList.toggle("is-active", a.getAttribute("data-nav") === key);
         });
