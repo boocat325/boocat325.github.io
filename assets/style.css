@@ -1457,6 +1457,42 @@ body.no-scroll {
     line-height: 1.6;
 }
 
+/* 长三角服务区域地图 */
+.region-heading {
+    margin: 2.5rem 0 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding-left: 0.8rem;
+    border-left: 3px solid var(--signal);
+}
+
+.region-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+
+.region-item {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.region-item img {
+    width: 100%;
+    display: block;
+}
+
+.region-item figcaption {
+    padding: 0.55rem 0.6rem 0.65rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--ink);
+    border-top: 1px solid var(--line);
+}
+
 /* 资质荣誉 */
 .credentials {
     display: grid;
@@ -1787,6 +1823,10 @@ body.no-scroll {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .region-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .fleet-lead {
         grid-template-columns: 1fr;
     }
@@ -1819,6 +1859,10 @@ body.no-scroll {
 
     .network-grid {
         grid-template-columns: 1fr;
+    }
+
+    .region-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .credentials {
