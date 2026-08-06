@@ -199,7 +199,7 @@
         var map = { "index.html": "index", "about.html": "about", "services.html": "services", "fleet.html": "fleet", "contact.html": "contact" };
         var key = map[path];
         if (!key) return;
-        document.querySelectorAll('.nav a[data-nav]').forEach(function (a) {
+        document.querySelectorAll('a[data-nav]').forEach(function (a) {
             a.classList.toggle("is-active", a.getAttribute("data-nav") === key);
         });
     })();

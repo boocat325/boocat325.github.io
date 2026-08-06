@@ -1764,3 +1764,59 @@ body.no-scroll {
         grid-template-columns: 1fr;
     }
 }
+
+/* ---------- 移动端底部导航 ---------- */
+
+.bottom-nav {
+    display: none;
+}
+
+@media (max-width: 620px) {
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 45;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        background: rgba(11, 26, 29, 0.96);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(232, 101, 43, 0.35);
+        box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.28);
+        padding-bottom: env(safe-area-inset-bottom, 0);
+    }
+
+    .bottom-nav a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        padding: 9px 0 7px;
+        font-size: 0.7rem;
+        line-height: 1.2;
+        color: var(--mist);
+        -webkit-tap-highlight-color: transparent;
+        transition: color 0.15s ease;
+    }
+
+    .bottom-nav svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .bottom-nav a:active {
+        color: var(--amber);
+    }
+
+    .bottom-nav a.is-active {
+        color: var(--amber);
+    }
+
+    /* 页脚留白，避免内容被底部导航遮挡 */
+    .footer {
+        padding-bottom: calc(1.5rem + 64px);
+    }
+}
