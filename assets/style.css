@@ -158,8 +158,8 @@ img {
     flex-direction: column;
     color: var(--paper);
     background-image:
-        linear-gradient(rgba(11, 26, 29, 0.82), rgba(11, 26, 29, 0.64)),
-        url("img/hero-fleet.webp");
+        linear-gradient(rgba(11, 26, 29, 0.76), rgba(11, 26, 29, 0.58)),
+        url("img/hero-fleet-bright.webp");
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -768,6 +768,14 @@ section {
     border-top: 1px dashed var(--line);
     color: var(--signal);
     font-weight: 600;
+}
+
+.scope-current {
+    margin-top: 0.9rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line);
+    color: var(--ink);
+    font-weight: 700;
 }
 
 /* ---------- 联系 ---------- */
