@@ -194,7 +194,7 @@ img {
     font-weight: 900;
     font-size: clamp(2.1rem, 6.5vw, 4rem);
     line-height: 1.18;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
     margin-bottom: 1.25rem;
 }
 
@@ -259,59 +259,30 @@ img {
     color: var(--amber);
 }
 
-/* 集装箱数据牌（箱体 MAX GROSS / TARE 数据牌样式） */
 .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    background: rgba(220, 229, 227, 0.22);
-    border: 1px solid rgba(220, 229, 227, 0.28);
-    max-width: 34em;
-    padding: 1px;
-}
-
-.stat {
-    display: grid;
-    grid-template-columns: 8.5em 1fr;
-    align-items: baseline;
-    gap: 0.75rem;
-    padding: 0.6rem 0.9rem;
-    background: rgba(11, 26, 29, 0.6);
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1.5rem, 6vw, 4rem);
 }
 
 .stat dt {
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--mist);
-    opacity: 0.85;
+    font-family: var(--font-lat);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    color: var(--signal);
+    line-height: 1.1;
 }
 
 .stat-num {
     display: inline-block;
     min-width: 3ch;
-    text-align: right;
+    text-align: left;
     font-variant-numeric: tabular-nums;
 }
 
 .stat dd {
-    font-family: var(--font-lat);
-    font-weight: 700;
-    font-size: 1.3rem;
-    line-height: 1.1;
-    color: var(--amber);
-    text-align: right;
-    white-space: nowrap;
-}
-
-/* 钢印铭牌 eyebrow */
-.hero .eyebrow {
-    display: inline-block;
-    padding: 0.35rem 0.8rem;
-    border: 1px dashed rgba(240, 178, 63, 0.55);
-    background: rgba(11, 26, 29, 0.35);
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: var(--mist);
 }
 
 /* 签名：集装箱编码钢印带（流动） */
@@ -410,7 +381,6 @@ section {
     font-weight: 900;
     font-size: clamp(1.6rem, 4.5vw, 2.4rem);
     line-height: 1.2;
-    letter-spacing: 0.02em;
     margin-bottom: 0.6rem;
 }
 
@@ -1095,7 +1065,8 @@ section {
     }
 
     .hero-stats {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 1.25rem;
     }
 
     .card {
